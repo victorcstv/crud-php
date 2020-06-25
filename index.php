@@ -28,7 +28,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <title>Lista de Empresas</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -38,7 +38,7 @@
     
     <body>
         <div class="container">
-            <div class="card element" >
+            <div class="card element">
                 <div class="card-header">
                     <div class="row">
                         <div class="col-10">
@@ -94,10 +94,10 @@
                                             ?>
                                             <tr>
                                                 <td><?= $row->RazaoSocial ?></td>
-                                                <td><?= $row->NomeFantasia ?></td>
+                                                <td width="300"><?= $row->NomeFantasia ?></td>
                                                 <td><?= ( $row->CNPJ) ?></td>
                                                 <td><?= ( $row->InscEstadual) ?></td>
-                                                <td class="text-center"><?= ( $row->StatusCadastro == 1 ? "Ativo" : "Inativo" ) ?></td>
+                                                <td><?= ( $row->StatusCadastro == 1 ? "Ativo" : "Inativo" ) ?></td>
                                                 <td class="text-center">
                                                     <a href="form-company.php?action=Read&id=<?= $row->CodEmpresa ?>" class="btn btn-info btn-sm view" title="Read">Visualizar</a>
                                                     <a href="form-company.php?action=Update&id=<?= $row->CodEmpresa ?>" class="btn btn-warning btn-sm update" title="Update">Alterar</a>
