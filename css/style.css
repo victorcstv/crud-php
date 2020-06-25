@@ -1,0 +1,28 @@
+.container{
+    position: relative;
+  }
+
+.element{
+position: absolute;
+top: 50%; left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.container{
+position:relative;
+width:90vw;
+height: 90vh;
+margin: auto;
+}
+
+.element{
+position:absolute;
+width: 50vw; height: 50vh;
+}
+
+/* just aesthetics */
+body{
+height: 100vh;
+display:flex;
+background: azure;
+}
