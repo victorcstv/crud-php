@@ -38,15 +38,14 @@
     
     <body>
         <div class="container">
-            <div class="card">
+            <div class="card element" >
                 <div class="card-header">
                     <div class="row">
                         <div class="col-10">
                             <h2>Lista de Empresas</h2>
                         </div>
                         <div class="col-2 text-right">
-                            <a href="form-company.php" class="btn btn-primary btn-sm" title="Novo">Novo</a>
-                            <a href="#" class="btn btn-secondary btn-sm" title="Lista">Lista</a>
+                            <a href="form-company.php" class="btn btn-sm new" title="Novo">Novo</a>
                         </div>
                     </div>
                 </div>
@@ -71,56 +70,57 @@
                             <?php
                         }
                     ?>                    
+                    <div class="outTable">
+                        <table class="table table-bordered table-striped table-hover table-sm" cellpadding="0">
 
-                    <table class="table table-bordered table-striped table-hover table-sm">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Razão Social</th>
+                                    <th class="fantasia">Nome Fantasia</th>
+                                    <th>CNPJ</th>
+                                    <th>Inscrição Estadual</th>
+                                    <th>Status</th>
+                                    <th class="text-center">Opções</th>
+                                </tr>
+                            </thead>
 
-                        <thead class="thead-light">
-                            <tr>
-                                <th class="text-center">Razão Social</th>
-                                <th class="text-center">Nome Fantasia</th>
-                                <th>CNPJ</th>
-                                <th class="text-center">Inscrição Estadual</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
+                            <tbody>
+                                
+                                <?php
+                                
+                                    if ( $data->rowCount() > 0 ) {
+                                        
+                                        while ($row = $data->fetch(PDO::FETCH_OBJ) ) {
+                                            ?>
+                                            <tr>
+                                                <td><?= $row->RazaoSocial ?></td>
+                                                <td><?= $row->NomeFantasia ?></td>
+                                                <td><?= ( $row->CNPJ) ?></td>
+                                                <td><?= ( $row->InscEstadual) ?></td>
+                                                <td class="text-center"><?= ( $row->StatusCadastro == 1 ? "Ativo" : "Inativo" ) ?></td>
+                                                <td class="text-center">
+                                                    <a href="form-company.php?action=Read&id=<?= $row->CodEmpresa ?>" class="btn btn-info btn-sm view" title="Read">Visualizar</a>
+                                                    <a href="form-company.php?action=Update&id=<?= $row->CodEmpresa ?>" class="btn btn-warning btn-sm update" title="Update">Alterar</a>
+                                                    <a href="delete-company.php?CodEmpresa=<?= $row->CodEmpresa ?>" class="btn btn-danger btn-sm delete" title="Delete">Excluir</a>
+                                                </td>
+                                            </tr>
 
-                        <tbody>
-                            
-                            <?php
-                            
-                                if ( $data->rowCount() > 0 ) {
-                                    
-                                    while ($row = $data->fetch(PDO::FETCH_OBJ) ) {
+                                            <?php
+                                        }
+                                        
+                                
+                                    } else {
                                         ?>
-                                        <tr>
-                                            <td class="text-center"><?= $row->CodEmpresa ?></td>
-                                            <td><?= $row->RazaoSocial ?></td>
-                                            <td><?= $row->NomeFantasia ?></td>
-                                            <td class="text-center"><?= ( $row->CNPJ) ?></td>
-                                            <td class="text-center"><?= ( $row->InscEstadual) ?></td>
-                                            <td class="text-center"><?= ( $row->StatusCadastro == 1 ? "Ativo" : "Inativo" ) ?></td>
-                                            <td>
-                                                <a href="form-company.php?action=Read&id=<?= $row->CodEmpresa ?>" class="btn btn-info btn-sm" title="Read">Visualizar</a>
-                                                <a href="form-company.php?action=Update&id=<?= $row->CodEmpresa ?>" class="btn btn-warning btn-sm" title="Update">Alterar</a>
-                                                <a href="delete-company.php?CodEmpresa=<?= $row->CodEmpresa ?>" class="btn btn-danger btn-sm" title="Delete">Excluir</a>
-                                            </td>
-                                        </tr>
-
+                                        <td colspan="5" style="color: red;">Não foi possivel listar as empresas.</td>
                                         <?php
                                     }
-                                    
-                            
-                                } else {
+
                                     ?>
-                                    <td colspan="5" style="color: red;">Não foi possivel listar as empresas.</td>
-                                    <?php
-                                }
+                                            
+                            </tbody>
 
-                                ?>
-                                        
-                        </tbody>
-
-                    </table>
+                        </table>
+                    </div>
 
                 </div>
 

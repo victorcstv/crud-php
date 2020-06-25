@@ -1,11 +1,20 @@
 .container{
-    position: relative;
-  }
+  position: relative;
+}
+
+select{
+  -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none; 
+}
 
 .element{
 position: absolute;
 top: 50%; left: 50%;
 transform: translate(-50%, -50%);
+background: #121212;
+color: #FAFAFA;
+border-radius: 4px;
 }
 
 .container{
@@ -15,14 +24,165 @@ height: 90vh;
 margin: auto;
 }
 
-.element{
-position:absolute;
-width: 50vw; height: 50vh;
+.save{
+  background-color: #303030;
+  border-radius: 4px;
+  border-style: none;
+  color: #bb86fc;
+  font-weight: bold;
+  transition: 0.6;
 }
 
-/* just aesthetics */
+.new{
+  background-color: #04d361;
+  border-radius: 4px;
+  border-style: none;
+  color: #303030;;
+  font-weight: bold;
+  transition: 0.8;
+}
+
+.new:hover{
+  opacity: 0.8;
+  background-color: #04d361;
+  color: #FAFAFA
+}
+
+.txt{
+  color: #bb86fc;
+}
+
+.save:hover{
+  background-color: #bb86fc;
+}
+
+.return{
+  background-color: #303030;
+  border-radius: 4px;
+  border-style: none;
+  color: #02dac4;
+  font-weight: bold;
+  transition: 0.6;
+}
+
+.return:hover{
+  background-color: #02dac4;
+}
+
+.element{
+position:absolute;
+width: 50vw;
+}
+
 body{
 height: 100vh;
 display:flex;
-background: azure;
+background: #212121;
+}
+
+.element input, .element input:read-only {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #bb86fc;
+  border-radius: 0;
+  color: #FAFAFA;
+}
+
+.element select{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #bb86fc;
+  border-radius: 0;
+  color: #FAFAFA;
+}
+
+.element input:focus, .element select:focus{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #bb86fc;
+  border-radius: 0;
+  color: #FAFAFA;
+}
+
+.opt{
+  background-color: #212121;;
+  color: #FAFAFA;
+}
+
+.opt:hover{
+  background-color: #bb86fc
+}
+
+table{
+  background-color: #303030;
+  table-layout: auto;
+  margin: 0 !important;
+  border-radius: 10px;
+}
+
+th{
+  background-color: #212121 !important;
+  color: #bb86fc !important;
+  font-weight: 600;
+}
+
+.fantasia{
+  padding-right: 10px !important;
+}
+
+tr{
+  color: #FAFAFA;
+}
+
+tr:hover{
+  color: #02dac4 !important;
+}
+
+table, th, td {
+  border: none !important;
+}
+
+.view {
+  background-color: #404040;
+  border-radius: 4px;
+  border-style: none;
+  color: #02dac4;
+  font-weight: bold;
+  transition: 0.6;
+}
+
+.view:hover{
+  background-color: #02dac4;
+  color: #FAFAFA;
+}
+
+.update{
+  background-color: #404040;
+  border-radius: 4px;
+  border-style: none;
+  color: #fd951f;
+  font-weight: bold;
+  transition: 0.6;
+}
+
+.update:hover{
+  background-color: #fd951f;
+  color: #FAFAFA;
+}
+
+.delete{
+  background-color: #404040;
+  border-radius: 4px;
+  border-style: none;
+  color: #cb4d4d;
+  font-weight: bold;
+  transition: 0.6;
+}
+
+.delete:hover{
+  background-color: #cb4d4d;
+  color: #FAFAFA;
 }

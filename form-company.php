@@ -66,9 +66,6 @@
                         <div class="col-10">
                             <h2>Cadastro de Empresa - <?= $subTitle ?></h2>
                         </div>
-                        <div class="col-2 text-right">
-                            <a href="index.php" class="btn btn-secondary btn-sm" title="Lista">Lista</a>
-                        </div>
                     </div>
                 </div>
 
@@ -77,27 +74,27 @@
                         <input type="hidden" id="CodEmpresa" name="CodEmpresa" value="<?= (isset($arrayCompanys->CodEmpresa) ? $arrayCompanys->CodEmpresa : "" ) ?>" />
 
                         <div class="row">
-                            <div class="control-group col-xs-12 col-sm-3">
-                                <div class="control-label">
+                            <div class="control-group col-xs-12 col-sm-6">
+                                <div class="control-label txt">
                                     <label for="tipo">Razão Social</label>
                                 </div>
 
                                 <div class="controls">
                                     <input type="text" class="form-control" id="RazaoSocial" name="RazaoSocial" placeholder="Razão Social"
-                                        maxlength="50" required
+                                        maxlength="50" size="50" required
                                         value="<?= (isset($arrayCompanys->RazaoSocial) ? $arrayCompanys->RazaoSocial : "" ) ?>"
                                         <?= ($action == "Read" ? "readonly" : "" ) ?> />                    
                                 </div>
                             </div>
 
-                            <div class="control-group col-xs-12 col-sm-6">
-                                <div class="control-label">
+                            <div class="control-group col-xs-12 col-sm-4">
+                                <div class="control-label txt">
                                     <label for="descricao">Nome Fantasia</label>
                                 </div>
 
                                 <div class="controls">
-                                    <input type="text" class="form-control" id="NomeFantasia" name="NomeFantasia" placeholder="Nome Fantasia" 
-                                        maxlength="30" required
+                                    <input type="text" class="form-control txt" id="NomeFantasia" name="NomeFantasia" placeholder="Nome Fantasia" 
+                                        maxlength="30" size="30" required
                                         value="<?= (isset($arrayCompanys->NomeFantasia) ? $arrayCompanys->NomeFantasia : "" ) ?>"
                                         <?= ($action == "Read" ? "readonly" : "" ) ?>
                                     />
@@ -113,13 +110,13 @@
 
                         <div class="row">
                             <div class="control-group col-xs-12 col-sm-3">
-                                <div class="control-label">
+                                <div class="control-label txt">
                                     <label for="CNPJ">CNPJ</label>
                                 </div>
 
                                 <div class="controls">
-                                    <input type="number" class="form-control" id="CNPJ" name="CNPJ" placeholder="CNPJ"
-                                        maxlength="14" required
+                                    <input type="text" class="form-control" id="CNPJ" name="CNPJ" placeholder="CNPJ"
+                                        minlength="14" maxlength="14" size="14" required
                                         value="<?= (isset($arrayCompanys->CNPJ) ? $arrayCompanys->CNPJ : "" ) ?>"
                                         <?= ($action == "Read" ? "readonly" : "" ) ?>
                                     />
@@ -127,13 +124,13 @@
                             </div>
 
                             <div class="control-group col-xs-12 col-sm-3">
-                                <div class="control-label">
+                                <div class="control-label txt">
                                     <label for="InscEstadual">Inscrição Estadual</label>
                                 </div>
 
                                 <div class="controls">
-                                    <input type="number" class="form-control" id="InscEstadual" name="InscEstadual" placeholder="Inscrição Estadual"
-                                        maxlength="14" required
+                                    <input type="text" class="form-control" id="InscEstadual" name="InscEstadual" placeholder="Inscrição Estadual" 
+                                        minlength="14" maxlength="14" size="14" required
                                         value="<?= (isset($arrayCompanys->InscEstadual) ? $arrayCompanys->InscEstadual : "" ) ?>"
                                         <?= ($action == "Read" ? "readonly" : "" ) ?>
                                     />
@@ -141,14 +138,14 @@
                             </div>
 
                             <div class="control-group col-xs-12 col-sm-6">
-                                <div class="control-label">
-                                    <label for="statusCadastro">Status</label>
+                                <div class="control-label txt">
+                                    <label for="statusCadastro txt">Status</label>
                                 </div>
 
                                 <div class="controls">
                                     <select class="form-control" id="StatusCadastro" name="StatusCadastro" required="required">
-                                        <option value="1" <?= (isset($arrayCompanys->StatusCadastro) ? ( $arrayCompanys->StatusCadastro == 1 ? 'selected="Ativo"' : "disabled" ) : "" ) ?>>Ativo</option>
-                                        <option value="2" <?= (isset($arrayCompanys->StatusCadastro) ? ( $arrayCompanys->StatusCadastro == 2 ? 'selected="Inativo"' : "disabled" ) : "" ) ?>>Inativo</option>
+                                        <option class="opt" value="1" <?= (isset($arrayCompanys->StatusCadastro) ? ( $arrayCompanys->StatusCadastro == 1 ? 'selected="Ativo"' : "disabled" ) : "" ) ?>>Ativo</option>
+                                        <option class="opt" value="2" <?= (isset($arrayCompanys->StatusCadastro) ? ( $arrayCompanys->StatusCadastro == 2 ? 'selected="Inativo"' : "disabled" ) : "" ) ?>>Inativo</option>
                                     </select>                    
                                 </div>
                             </div>
@@ -162,12 +159,12 @@
 
                         <div class="row">
                             <div class="control-group col-12">
-                                <a class="btn btn-outline-secondary" href="index.php">Voltar</a>
+                                <a class="btn return" href="index.php">Voltar</a>
                                 
                                 <?php
                                 if ($action != "Read") {
                                     ?>
-                                    <button name="btEnviar" id="btEnviar" class="btn btn-success" type="submit">Salvar</button>
+                                    <button name="btEnviar" id="btEnviar" class="btn save" type="submit">Salvar</button>
                                     <?php
                                 }
                                 ?>
