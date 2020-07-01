@@ -61,7 +61,7 @@
 
     <body>
         <div class="container">        
-            <div class="card element">
+            <div class="card element" style="width: 55vw">
                 <div class="card-header">
                     <div class="row">
                         <div class="col-10">
